@@ -23,11 +23,11 @@ func Setup(engine *gin.Engine) {
 
 	postCompletions := func(c *gin.Context) {
 		SetCORS(c)
-		if c.Request.Header.Get("Authorization") != "Bearer "+conf.Conf.Key {
-			c.JSON(401, "unauthorized")
-			c.Abort()
-			return
-		}
+		//if c.Request.Header.Get("Authorization") != "Bearer "+conf.Conf.Key {
+		//	c.JSON(401, "unauthorized")
+		//	c.Abort()
+		//	return
+		//}
 
 		var req poe.CompletionRequest
 		if err := c.ShouldBindJSON(&req); err != nil {
